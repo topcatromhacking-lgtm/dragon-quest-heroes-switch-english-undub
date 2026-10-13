@@ -4,7 +4,7 @@
 **Scope:** *Dragon Quest Heroes I*, Japanese Nintendo Switch release 1.0.0, English-undub project.  
 **Working build:** v9.3.10 (partially gameplay-tested) applied on validated v9.3.9; **do not declare v9.3.10 final** while Action List truncation remains.
 
-This is a **living user-visible changelog**, not an assertion that the Switch release was officially localized into English. It documents intentional departures from the *official English Western PC release*, distinguishes genuine new Switch options from official translations, and records why modifications are needed to fit the Switch UI.
+This is a **living user-visible changelog**, not an assertion that the Switch release was officially localized into English. **Every English string previously observed in our Switch screenshots was introduced by our English-undub transplant or later patch, not originally present as English in the Japanese Switch game.** It documents intentional departures from the *official English Western PC release*, distinguishes genuine new Switch options from official translations, and records why modifications are needed to fit the Switch UI.
 
 **Status terms:** `Confirmed working` = user validated in Eden; `Partial` = some affected rows still broken; `Proposal` = not installed or tested; `Investigation` = source/renderer behavior unproven. Wording listed under "Switch project" may be custom even when based on an official PC text source.
 
@@ -48,7 +48,7 @@ The Western PC system-message resource `0000000000000001.vap` has no English cou
 | --- | --- | --- |
 | `0000000000000024.vap` | `0000000000000008.vap` | Earlier two-platform extraction audit: **both 184 rows, 12-byte records, PC file 19,256 bytes**; sampled move names and descriptions match the English translation at the same IDs. Original Japanese Switch resource was 18,412 bytes. |
 
-This is a **strong content/structure mapping**, not yet an independently verified identical-file SHA-256 result. The PC `0000000000000001.vap` is the *system menu text*, **not** the Action List descriptions resource.
+**Direct verification (user-supplied Western PC extraction, 2026-10-13):** the PC `0024.vap` has SHA-256 `eaeab8f434085119f9efdc4a0c06a2a7bcd3ef7b5f4b5c759b3db24f76620aa4`, **byte-identical to the already transplanted English Switch v9.3.9 Action List VAP** (19,256 bytes). **This does NOT mean the original Japanese Switch release contained English text**: the original Japanese Switch `0008.vap` was a different 18,412-byte resource. v9.3.10 then adds explicit line breaks, retaining the same wording but no longer byte-identical. The PC `0000000000000001.vap` is the *system menu text*, **not** the Action List descriptions resource.
 
 Examples of complete source descriptions already present in Switch `0008.vap`:
 
@@ -61,7 +61,7 @@ Examples of complete source descriptions already present in Switch `0008.vap`:
 
 **Next investigation before any text edits:**
 
-1. Compare the full PC `0000000000000024.vap` with the translated Switch `0000000000000008.vap` at byte, record, punctuation, control-code and newline levels. The repo contains a [read-only comparison tool](../tools/compare_dqh1_action_vaps.py), but the actual PC binary was not available for the current byte-by-byte test.
+1. Compare the full PC `0000000000000024.vap` with the translated Switch `0000000000000008.vap` at byte, record, punctuation, control-code and newline levels. The repo contains a [read-only comparison tool](../tools/compare_dqh1_action_vaps.py); direct SHA-256 comparison of the newly supplied PC file against the **transplanted v9.3.9 Switch English VAP** has confirmed byte identity, not original-platform text equivalence.
 2. Capture an actual **Western PC Action List help window** for the same long records at a known resolution. **The PC text resource alone cannot prove that its Windows renderer wraps automatically or has more glyph capacity.**
 3. For the Switch, measure **visible cutoff position**, rendered line count and whether a forced newline changes total visible glyph count. Distinguish **per-line pixel clipping, hard total-glyph budget, escape-code parsing and line-count limitations**.
 4. Only then decide among safer explicit wrapping, label/layout scaling, adjusted text viewport, or narrowly isolated renderer changes. Avoid a mass rewrite and do not reduce the official wording.
