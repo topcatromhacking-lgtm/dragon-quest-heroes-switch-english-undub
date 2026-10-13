@@ -61,11 +61,13 @@ Examples of complete source descriptions already present in Switch `0008.vap`:
 
 **Next investigation before any text edits:**
 
-1. Compare the full PC `0000000000000024.vap` with the translated Switch `0000000000000008.vap` at byte, record, punctuation, control-code and newline levels. Request the PC file separately if not locally available.
+1. Compare the full PC `0000000000000024.vap` with the translated Switch `0000000000000008.vap` at byte, record, punctuation, control-code and newline levels. The repo contains a [read-only comparison tool](../tools/compare_dqh1_action_vaps.py), but the actual PC binary was not available for the current byte-by-byte test.
 2. Capture an actual **Western PC Action List help window** for the same long records at a known resolution. **The PC text resource alone cannot prove that its Windows renderer wraps automatically or has more glyph capacity.**
 3. For the Switch, measure **visible cutoff position**, rendered line count and whether a forced newline changes total visible glyph count. Distinguish **per-line pixel clipping, hard total-glyph budget, escape-code parsing and line-count limitations**.
 4. Only then decide among safer explicit wrapping, label/layout scaling, adjusted text viewport, or narrowly isolated renderer changes. Avoid a mass rewrite and do not reduce the official wording.
 5. Validate the changed entries in Eden (Attack No MP / Uses MP, Inferno Slash, Recovery, longer descriptions), leaving v9.3.9 as rollback.
+
+Offline control test: comparing the local v9.3.9 Switch action table with the v9.3.10 wrapped table returns **184/184 content-equal records, 152 help descriptions with wrapping-only differences, and zero wording changes**. This tests the *patcher*, not Western PC rendering.
 
 The v9.3.10 patcher conserves text content and modifies only LINKDATA DQH1 slots `0x3` and `0x8`. Its checksums and simulated archive tests do **not** establish runtime layout correctness.
 
