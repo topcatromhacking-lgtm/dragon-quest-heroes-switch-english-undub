@@ -16,7 +16,7 @@ This is an **English undub**, not an English-dub conversion or a redistribution 
 
 ## Current state (13 October 2026)
 
-The work described below was completed and tested during earlier local development, **but its patch files and verification hashes have not yet been committed to this repository**. These are historical working-version labels, **not GitHub releases**.
+Earlier patches were developed and tested locally; the repository contains documentation and source-only tools, not a public game-asset release. These are historical working-version labels, **not GitHub releases**.
 
 | Area | Status |
 | --- | --- |
@@ -24,13 +24,13 @@ The work described below was completed and tested during earlier local developme
 | English dialogue and menus | Playable in reported tests; multiple remaining text/layout defects |
 | Hero selection, initial menu | Changes reported validated in local testing |
 | Western opening visuals | `mv002.mp4` substitution reported validated, with Japanese audio preserved |
-| Latest reported local working baseline | **v9.3.6** (video change layered on reported v9.3.5 UI baseline) |
+| Latest user-tested baseline | **v9.3.9** (Western PC Quick/Slick Controls, Log/Playtime); **v9.3.10** tested for menu wrapping, but Action List still clips |
 | Remaining movie assets | User reviewed the other 50, reporting no visible text; no video replacement planned |
 | Long dialogue pagination / clipping | Unresolved; **do not use failed v9.2.16 experiment** |
 | Japanese game update 1.03 | Compatibility assessment deferred |
 | Switch hardware testing | Not yet documented in this repository |
 
-See [development status](docs/STATUS.md), [roadmap](docs/ROADMAP.md), [test matrix](docs/TESTING.md), [movie inventory](docs/MOVIE_INVENTORY.csv), and [resource mapping notes](docs/RESOURCE_MAPPING.md).
+See [PC-to-Switch wording differences and test results](docs/PC_TO_SWITCH_DIFFERENCES.md), [development status](docs/STATUS.md), [roadmap](docs/ROADMAP.md), [test matrix](docs/TESTING.md), [movie inventory](docs/MOVIE_INVENTORY.csv), and [resource mapping notes](docs/RESOURCE_MAPPING.md).
 
 ## Known critical regression
 
