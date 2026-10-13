@@ -11,7 +11,7 @@ Updated: **2026-10-13**. This page records reported findings from iterative loca
 | v9.3.5 | Most recent reported working base for initial menu/title changes | Recover and independently recheck |
 | v9.3.6 | Reported Western visual opening `mv002.mp4` with Japanese voice/audio preserved | **Latest reported local baseline; files not yet in repository** |
 
-Exact archived ZIP names, build manifests, scripts and hashes remain to be verified. GitHub currently contains documentation only.
+Exact archived ZIP names, build manifests, scripts and hashes remain to be verified. GitHub contains documentation and historical read-only analysis utilities, not a verified release patch.
 
 ## Progress by subsystem
 
@@ -27,7 +27,7 @@ Exact archived ZIP names, build manifests, scripts and hashes remain to be verif
 | Adventure log/save menu | Navigation works | Some title/label truncation and malformed variable substitutions/pointers observed in tests |
 | Inventory/shop | Text dynamic substitutions worked in earlier tests | Some names/labels around 10-12 characters and descriptions around 30 visible characters were clipped |
 | Intro video | Western opening visual substitution successful in local report | Verify provenance, timing and Japanese audio integrity; **do not publish videos** |
-| Other videos | ~50 files remain to audit | Classify visual-language content, do not replace blindly |
+| Other videos | User reviewed all 50 remaining videos and reports no visible textual characters | Retain Japanese video streams; verify external subtitle/audio routing separately |
 | Base version | Japanese Switch 1.0.0 used for playtests | 1.03 not assessed |
 
 ## Technical hypotheses (not yet proven)
