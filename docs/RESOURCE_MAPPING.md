@@ -18,3 +18,16 @@ Reported confirmed pairs (**PC-Western** on left, **Switch-JP** on right):
 | `00000000000000bc.vap` | `0000000000000064.vap` | Cutscene subtitles |
 
 These correspondences are useful for narrowing the next extraction/mapping experiments, **not** proof that resources can be substituted without conversion. The original source archives and output CSVs need to be matched and rechecked. See [resource mapper](../tools/dqh1_resource_mapper.py) and [signature census](../tools/dqh1_signature_census.py).
+
+
+## Action List text (newly rechecked against the archived extraction audit)
+
+The historical `vap_family_report.txt` from the extracted **Western PC** and **original Japanese Switch** releases records:
+
+| Western PC candidate | Japanese Switch counterpart | Structural evidence |
+| --- | --- | --- |
+| `0000000000000024.vap` | `0000000000000008.vap` | Both have 184 rows, 12-byte (three-column) pointer records, base 0x20. Original PC 19,256 bytes and original Japanese Switch 18,412 bytes. |
+
+The Western PC first rows are **Attack (No MP Used)** / **Attack (Uses MP)**, followed by **Slash Combo**, **Charging Slash**, **Rising Slice** with the same full English descriptions as the current translated Switch `0008.vap`. The translated Switch baseline `0008.vap` is also **19,256 bytes**, with source SHA-256 `eaeab8f434085119f9efdc4a0c06a2a7bcd3ef7b5f4b5c759b3db24f76620aa4`.
+
+This materially strengthens the mapping, but a **full original PC file hash and byte-level comparison** remain pending; matching sizes, counts, and sampled strings do not prove byte identity. Likewise, full PC text does not prove exactly how the Windows executable renders/wraps Action List help. Do not shorten Switch action text before comparing both renderers. See [PC-to-Switch Differences](PC_TO_SWITCH_DIFFERENCES.md).
