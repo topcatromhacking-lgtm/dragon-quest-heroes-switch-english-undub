@@ -69,6 +69,12 @@ Examples of complete source descriptions already present in Switch `0008.vap`:
 
 Offline control test: comparing the local v9.3.9 Switch action table with the v9.3.10 wrapped table returns **184/184 content-equal records, 152 help descriptions with wrapping-only differences, and zero wording changes**. This tests the *patcher*, not Western PC rendering.
 
+### Switch renderer allocation: confirmed root cause
+
+The original Japanese Switch **1.0.0 executable** creates exactly **60 glyph/primitive slots (60 × 72 bytes)** for Action List help. `CMenuBtlAction::OnRegister()` passes `60` to `CFont::SetStrPrim()`, which stops at that sprite-count limit. **The next menu object immediately follows the 60-slot array in memory**, so increasing the constant alone would corrupt menu state. Of the 184 transplanted official PC descriptions, 99 exceed 60 Unicode characters (longest 116). The character cap is independent of the text panel's pixel width and line wrapping. **This explains the v9.3.10 truncation after wrapping.**
+
+Read the [verified NSO disassembly report](ACTION_LIST_60_SLOT_LIMIT.md). Preserve the complete PC text and pursue a safe larger sprite pool or paged help window as an isolated executable experiment, not an abbreviated language rewrite.
+
 The v9.3.10 patcher conserves text content and modifies only LINKDATA DQH1 slots `0x3` and `0x8`. Its checksums and simulated archive tests do **not** establish runtime layout correctness.
 
 ## 4. Separate open problems, not yet changed
