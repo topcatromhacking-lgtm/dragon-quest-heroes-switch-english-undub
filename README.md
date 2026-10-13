@@ -25,7 +25,7 @@ The work described below was completed and tested during earlier local developme
 | Hero selection, initial menu | Changes reported validated in local testing |
 | Western opening visuals | `mv002.mp4` substitution reported validated, with Japanese audio preserved |
 | Latest reported local working baseline | **v9.3.6** (video change layered on reported v9.3.5 UI baseline) |
-| Remaining movie assets | 51 files inventoried by name; 50 remaining to audit after the opening |
+| Remaining movie assets | User reviewed the other 50, reporting no visible text; no video replacement planned |
 | Long dialogue pagination / clipping | Unresolved; **do not use failed v9.2.16 experiment** |
 | Japanese game update 1.03 | Compatibility assessment deferred |
 | Switch hardware testing | Not yet documented in this repository |
