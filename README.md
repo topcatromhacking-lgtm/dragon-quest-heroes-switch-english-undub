@@ -25,12 +25,12 @@ The work described below was completed and tested during earlier local developme
 | Hero selection, initial menu | Changes reported validated in local testing |
 | Western opening visuals | `mv002.mp4` substitution reported validated, with Japanese audio preserved |
 | Latest reported local working baseline | **v9.3.6** (video change layered on reported v9.3.5 UI baseline) |
-| Remaining movie assets | Inventory and localization audit pending |
+| Remaining movie assets | 51 files inventoried by name; 50 remaining to audit after the opening |
 | Long dialogue pagination / clipping | Unresolved; **do not use failed v9.2.16 experiment** |
 | Japanese game update 1.03 | Compatibility assessment deferred |
 | Switch hardware testing | Not yet documented in this repository |
 
-See [development status](docs/STATUS.md), [roadmap](docs/ROADMAP.md), and [test matrix](docs/TESTING.md).
+See [development status](docs/STATUS.md), [roadmap](docs/ROADMAP.md), [test matrix](docs/TESTING.md), [movie inventory](docs/MOVIE_INVENTORY.csv), and [resource mapping notes](docs/RESOURCE_MAPPING.md).
 
 ## Known critical regression
 
@@ -38,7 +38,7 @@ An earlier experimental dialogue pagination change (v9.2.16) led to widespread d
 
 ## Repository contents
 
-Initially this repository contains documentation only. Patch scripts and reproducible manifests will be added after the local baseline files are recovered and independently checked. There is **no verified release ZIP here yet**.
+This repository currently contains documentation, a metadata-only movie inventory, and [recovered read-only analysis scripts](tools/README.md). These tools passed syntax and help checks, but have not been fully revalidated against extracted game data in this repository. **Patch-building scripts and verified release archives have not been added. There is no verified release ZIP here yet.**
 
 ## Distribution and legal notice
 
