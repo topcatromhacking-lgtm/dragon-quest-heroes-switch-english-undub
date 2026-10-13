@@ -43,3 +43,8 @@ A cut-off at the same location after shortening text is not enough to prove its 
 ## Non-negotiable acceptance checks
 
 A patch must not truncate previously working dialogue, lose text after a speaker change, change the wrong portrait, corrupt dynamic placeholders, remove Japanese voice acting, or break save-game actions. Compare screenshots and test transcripts against the last validated local build.
+
+
+## Current executable experiment (not baseline)
+
+**v9.3.11-EXP** is a separately packaged **Action List-only pagination proof** with a 132-byte AArch64 page-selector, tagged dual-page VAP records and unchanged 60-sprite allocation. Five offline integrity tests passed using locally supplied PC/Switch assets, and all 184 PC text entries remain recoverable (77 one-page, 107 two-page). **No emulator gameplay test, button mapping verification, or approved release.** The target main must be the exact Japanese Switch 1.0.0 NSO. Known working rollback is v9.3.9; v9.3.10 menu changes remain partially verified. See [experimental integration guide](ACTION_LIST_PAGEHOOK_EXPERIMENT.md).
