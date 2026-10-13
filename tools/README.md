@@ -36,3 +36,15 @@ python analyze_action_display_capacity.py /path/to/Switch/main --action /path/to
 ```
 
 See the [technical report](../docs/ACTION_LIST_60_SLOT_LIMIT.md). No gameplay patch for the executable is ready.
+
+
+## Offline Action List two-page layout planner
+
+The [page planner](plan_action_list_pages.py) and [synthetic unit tests](test_plan_action_pages.py) take the user's **original Western PC** `0000000000000024.vap` and estimate whether each complete English Action List description fits safely in one or two pages of the **existing native 60-primitive buffer**. The source is never modified; the default output is a metadata-only report.
+
+```sh
+python tools/plan_action_list_pages.py /path/to/PC/0000000000000024.vap --summary /tmp/action_page_stats.json
+python -m unittest discover -s tools -p 'test_plan_action_pages.py' -v
+```
+
+Full-corpus offline result: **77 one-page, 107 two-page, 0 three-page; complete wording preserved in all 184 cases**, with 58 estimated units per page and 39 per line. Seven synthetic tests pass. These are **not measurements of actual Switch font sprite use**, and no executable hook or in-game page control has yet been developed. Optional `--local-preview` writes copyrighted game text; **do not commit/upload the generated preview**. See [pagination engineering design](../docs/ACTION_LIST_PAGINATION_DESIGN.md).
