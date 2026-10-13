@@ -89,4 +89,4 @@ For every new change, append a row recording **source (official PC / Japanese-on
 
 Priority: **official Western PC wording/assets > faithful new translation for genuinely Switch-only features > minimum required screen-space adaptation**. Never mark a proposed change as tested. Preserve Japanese voice/audio. Do not include copyrighted assets in this repository.
 
-See [STATUS](STATUS.md), [RESOURCE_MAPPING](RESOURCE_MAPPING.md), [issue #8 (Action List and menus)](../issues/8) and [issue #9 (accented glyph)](../issues/9).
+See [STATUS](STATUS.md), [RESOURCE_MAPPING](RESOURCE_MAPPING.md), [issue #8 (Action List and menus)](https://github.com/topcatromhacking-lgtm/dragon-quest-heroes-switch-english-undub/issues/8) and [issue #9 (accented glyph)](https://github.com/topcatromhacking-lgtm/dragon-quest-heroes-switch-english-undub/issues/9).
