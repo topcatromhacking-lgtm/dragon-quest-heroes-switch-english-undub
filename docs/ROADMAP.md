@@ -6,11 +6,15 @@ Recover the actual v9.3.5 and v9.3.6 local build archives and the input manifest
 
 **Do not** merge the failed experimental v9.2.16 dialogue pagination code.
 
-## Phase 1: opening and movie audit
+## Phase 1: verify movie visuals; locate cutscene subtitle and audio resources
 
-Inventory the remaining ~50 movies, including relative paths, durations, codecs, subtitle/text content, language, audio tracks and any UI references. Group by (a) Japanese text on screen, (b) language-neutral video, (c) unknown. For each localization candidate, document an English-visual/Japanese-audio approach and test syncing, playback and transitions.
+The user reviewed the **50 videos after the opening** (`mv003.mp4`–`mv052.mp4`) and reports **no visible textual characters**. The video streams therefore have no known visual-language localization requirement, and the plan is to **retain the Japanese originals**. The exception remains the reportedly localized opening `mv002.mp4`. This is a user visual assessment, not an independent file-by-file technical verification.
 
-Do not replace every movie automatically; do not redistribute the source videos.
+Audio and subtitles are suspected to be stored/controlled by **other assets**. Prior resource mapping identified the PC-Western `00000000000000bc.vap` ↔ Switch-JP `0000000000000064.vap` pair as **cutscene subtitles**. Revalidate that correspondence and investigate how subtitle calls, timing, speaker metadata, and audio are dispatched; do not assume all movies use this resource or that audio is necessarily outside the MP4 container.
+
+Before changing files, establish one small runtime case: (1) identify the cutscene, (2) locate the corresponding subtitle record, (3) verify the Japanese line and official English equivalent, (4) determine where voiced audio comes from, and (5) confirm any patch preserves Japanese audio and synchronization. Do not alter video assets when the video has no Japanese text; do not redistribute copyrighted media.
+
+Movie filename audit record: [MOVIE_INVENTORY.csv](MOVIE_INVENTORY.csv).
 
 ## Phase 2: dialogue engine investigations
 
