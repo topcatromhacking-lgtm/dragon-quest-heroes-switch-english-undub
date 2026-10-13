@@ -9,9 +9,11 @@ Updated: **2026-10-13**. This page records reported findings from iterative loca
 | v9.2.x | English text injection and many successful dialogues; long strings caused overflow/truncation, menu widths varied | Historical research |
 | v9.2.16 | Experimental attempt to solve multi-page text; broader regression, including wrong character portrait (Terry) | **Rejected. Do not build on this** |
 | v9.3.5 | Most recent reported working base for initial menu/title changes | Recover and independently recheck |
-| v9.3.6 | Reported Western visual opening `mv002.mp4` with Japanese voice/audio preserved | **Latest reported local baseline; files not yet in repository** |
+| v9.3.6 | Western visual opening `mv002.mp4` with Japanese voice/audio preserved | Preserved in subsequent local builds; files not in repository |
+| v9.3.9 | Official Western PC Quick/Slick Control texture labels, save header Log and Playtime | **User validated; safe gameplay rollback** |
+| v9.3.10 | Misc and System help wrapping, two newly translated Switch-only settings, Controls/System/Actions titles, Action List wrapping | **Partially validated in Eden**: all listed menu fixes work except one truncated System setting name; Action List descriptions still truncate despite line breaks. Startup black screen was traced to swapped initial-menu vs DQH1 LINKDATA locations, not a proven patch defect. |
 
-Exact archived ZIP names, build manifests, scripts and hashes remain to be verified. GitHub contains documentation and historical read-only analysis utilities, not a verified release patch.
+GitHub contains documentation and historical read-only analysis utilities, not a verified public game patch. See [PC-to-Switch adaptation log](PC_TO_SWITCH_DIFFERENCES.md) for current user-confirmed changes and open questions.
 
 ## Progress by subsystem
 
@@ -21,13 +23,15 @@ Exact archived ZIP names, build manifests, scripts and hashes remain to be verif
 | NPC dialogue | Old Man, Young Lady, Healix, Doric tested in screenshots | One Healix line truncated; soldier dialogue/name clipped; later Doric dialogue regression in experiments |
 | Portrait dialogue | Doric and others display expected portraits in successful builds | Erroneous switch to Terry under rejected v9.2.16 |
 | Character setup | Text formatting improved in A/B tests; longer strings readable in B | Ensure fixes do not worsen story dialogues |
-| Control options | English descriptions displayed; manual wrapping tested | Japanese labels still reported in earlier tests; text should remain source-faithful |
+| Control options | Western PC Quick/Slick art and Controls plaque validated in v9.3.9 / v9.3.10 | Continue general UI checks |
 | Camera settings | Most rows translated, including Player Distance | Long descriptions need context-sensitive wrapping |
 | Naming/alphabet | Japanese alphabet reported in earlier testing | Verify and document current state |
-| Adventure log/save menu | Navigation works | Some title/label truncation and malformed variable substitutions/pointers observed in tests |
+| Adventure log/save menu | **Log** and **Playtime** labels validated in v9.3.9 | Continue save/load and dynamic substitution regression checks |
 | Inventory/shop | Text dynamic substitutions worked in earlier tests | Some names/labels around 10-12 characters and descriptions around 30 visible characters were clipped |
 | Intro video | Western opening visual substitution successful in local report | Verify provenance, timing and Japanese audio integrity; **do not publish videos** |
 | Other videos | User reviewed all 50 remaining videos and reports no visible textual characters | Retain Japanese video streams; verify external subtitle/audio routing separately |
+| System and Misc menus | v9.3.10 English description wrapping validated; two new Switch-specific settings translated and their descriptions fit | **Shorten Special Animations** title clips; proposed **Shorten Specials**, not patched |
+| Action List | Full official English text stored in v9.3.10 resource; **Actions** title fits | Forced wrapping still truncates; compare PC 0024.vap and live PC display before shortening |
 | Base version | Japanese Switch 1.0.0 used for playtests | 1.03 not assessed |
 
 ## Technical hypotheses (not yet proven)
