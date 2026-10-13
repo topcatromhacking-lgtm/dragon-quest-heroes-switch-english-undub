@@ -73,7 +73,9 @@ Offline control test: comparing the local v9.3.9 Switch action table with the v9
 
 The original Japanese Switch **1.0.0 executable** creates exactly **60 glyph/primitive slots (60 × 72 bytes)** for Action List help. `CMenuBtlAction::OnRegister()` passes `60` to `CFont::SetStrPrim()`, which stops at that sprite-count limit. **The next menu object immediately follows the 60-slot array in memory**, so increasing the constant alone would corrupt menu state. Of the 184 transplanted official PC descriptions, 99 exceed 60 Unicode characters (longest 116). The character cap is independent of the text panel's pixel width and line wrapping. **This explains the v9.3.10 truncation after wrapping.**
 
-Read the [verified NSO disassembly report](ACTION_LIST_60_SLOT_LIMIT.md). Preserve the complete PC text and pursue a safe larger sprite pool or paged help window as an isolated executable experiment, not an abbreviated language rewrite.
+Read the [verified NSO disassembly report](ACTION_LIST_60_SLOT_LIMIT.md).
+
+**New offline feasibility test, 2026-10-13:** A [read-only pagination planner](../tools/plan_action_list_pages.py) demonstrates that **77/184 official PC descriptions fit on a single planned page and the remaining 107 fit on two pages** using a conservative **58 estimated sprite units per page / 39 units per line**. Every description's wording and native button-token order is preserved. This is **NOT an in-game fix**: a safe page-switching input, owned storage for both page strings, and Action List-only executable hook remain unimplemented. The [engineering plan](ACTION_LIST_PAGINATION_DESIGN.md) establishes that `OnRegister` registers live sprite-buffer addresses with the renderer, so temporary buffers are unsafe. The 60-slot menu allocation itself stays unchanged. Do **not** merge an untested hook into v9.3.10.
 
 The v9.3.10 patcher conserves text content and modifies only LINKDATA DQH1 slots `0x3` and `0x8`. Its checksums and simulated archive tests do **not** establish runtime layout correctness.
 
