@@ -100,3 +100,10 @@ For every new change, append a row recording **source (official PC / Japanese-on
 Priority: **official Western PC wording/assets > faithful new translation for genuinely Switch-only features > minimum required screen-space adaptation**. Never mark a proposed change as tested. Preserve Japanese voice/audio. Do not include copyrighted assets in this repository.
 
 See [STATUS](STATUS.md), [RESOURCE_MAPPING](RESOURCE_MAPPING.md), [issue #8 (Action List and menus)](https://github.com/topcatromhacking-lgtm/dragon-quest-heroes-switch-english-undub/issues/8) and [issue #9 (accented glyph)](https://github.com/topcatromhacking-lgtm/dragon-quest-heroes-switch-english-undub/issues/9).
+
+
+### v9.3.11-EXP: experimental Action List page-selection hook (not tested in Eden)
+
+The separate development package now contains a read-only-to-sources builder for a **paired data + executable experiment**, using the original Western PC 184-entry VAP and Japanese Switch 1.0.0 NSO. The text bank encodes **77 one-page and 107 two-page** descriptions via a private tagged NUL-separated secondary string; all 184 official PC descriptions remain recoverable. A 132-byte AArch64 routine inserted in the original text-to-rodata alignment gap replaces only the Action List description pointer selection. The original **60-sprite pool, global font function, menu text fields, Japanese audio and starting-menu archive are unchanged**. The DQH1 gameplay archive receives a separately appended resource and one updated IDX entry (slot 8); both texts require the correct tagged VAP and hook together.
+
+**Five offline integration tests passed:** exact hashes, text preservation/markers, synthetic IDX/BIN append, lossless three-section NSO rebuild, and version refusal. The user has not yet run this in Eden; the selected **PAD input bit 20 is not identified with a confirmed physical Switch button**. Neither boot compatibility nor input behavior is claimed. No build has been promoted to baseline. See [experiment guide](ACTION_LIST_PAGEHOOK_EXPERIMENT.md) and [AArch64 source](../tools/action_page_selector.S).
