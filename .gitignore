@@ -1,0 +1,45 @@
+# Copyrighted or decrypted Nintendo Switch/game assets
+*.nsp
+*.xci
+*.nca
+*.nso
+*.npdm
+*.nro
+*.nsp.*
+*.tik
+*.cert
+*.mp4
+*.mkv
+*.usm
+*.wem
+*.bnk
+*.wav
+*.ogg
+*.bfstm
+*.bfsar
+*.sarc
+*.szs
+*.dat
+*.vap
+*.zip
+
+# Extracted game trees and local working directories
+romfs/
+exefs/
+extracted/
+dumps/
+original/
+work/
+scratch/
+build/
+dist/
+local-assets/
+game-files/
+
+# Local/system files
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+.env
+.env.*
