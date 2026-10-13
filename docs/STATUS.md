@@ -31,7 +31,7 @@ GitHub contains documentation and historical read-only analysis utilities, not a
 | Intro video | Western opening visual substitution successful in local report | Verify provenance, timing and Japanese audio integrity; **do not publish videos** |
 | Other videos | User reviewed all 50 remaining videos and reports no visible textual characters | Retain Japanese video streams; verify external subtitle/audio routing separately |
 | System and Misc menus | v9.3.10 English description wrapping validated; two new Switch-specific settings translated and their descriptions fit | **Shorten Special Animations** title clips; proposed **Shorten Specials**, not patched |
-| Action List | Official PC 0024.vap byte-identical to the English-transplanted v9.3.9 Switch 0008.vap; **Actions** heading fits; NSO analysis confirms original Japanese Switch renderer allocates **60 × 72-byte character sprites** | 99/184 descriptions exceed 60 characters; need an isolated executable-level larger-pool or paging design. Never raise count alone or shorten official text. |
+| Action List | Official PC 0024.vap byte-identical to the English-transplanted v9.3.9 Switch 0008.vap; **Actions** heading fits; NSO analysis confirms original Japanese Switch renderer allocates **60 × 72-byte character sprites** | 99/184 descriptions exceed 60 characters; offline 58-unit two-page layout preserves all 184 descriptions (77 on one page, 107 on two). **Runtime page switching is not yet built**. Never raise count alone or shorten official text. |
 | Base version | Japanese Switch 1.0.0 used for playtests | 1.03 not assessed |
 
 ## Technical hypotheses (not yet proven)
