@@ -54,3 +54,10 @@ Use the current installed **compatible v9.3.11/v9.3.12 gameplay LINKDATA**, with
 Other category headings (`Attributes`, `Spells and Abilities`, `Switch Character`, `Skill Points`), long skill names, and `ESC F/I/G` variable/code interpretation remain **unmodified and tracked separately** in [#10](https://github.com/topcatromhacking-lgtm/dragon-quest-heroes-switch-english-undub/issues/10) and [#12](https://github.com/topcatromhacking-lgtm/dragon-quest-heroes-switch-english-undub/issues/12).
 
 **No Eden confirmation or stable release is claimed for v9.3.14.**
+
+
+## First Eden result (2026-10-14): primary description-regression recovery confirmed
+
+The user tested v9.3.14-EXP in Eden and supplied a Luceus **Inferno Slash** skill screenshot. The description again shows `Summons a fiery tornado that sweeps` (same visible text as in v9.3.12, versus v9.3.13's `...that sw`). Both `Details` and `Requirements` headings are complete and there is no obvious missing sprite or corruption in this single screen. This is a successful **focused runtime demonstration** of the newly allocated/restored 36-slot capacity, **not a complete proof of concurrent-state safety or layout correctness**.
+
+`Points Required` was not displayed in this specific screenshot; verify it on a point-costing/locked skill. Recheck Aurora/other characters, open/close transitions, the prior X-held Action List pagination, and repeated selection for any external static BSS pool conflict. Keep v9.3.14-EXP experimental until these checks pass. The full official Inferno Slash description extends beyond `sweeps`, so **description remains incomplete** even though the regression was reversed.
