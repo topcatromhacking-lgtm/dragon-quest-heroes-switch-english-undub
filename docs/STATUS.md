@@ -54,3 +54,8 @@ A patch must not truncate previously working dialogue, lose text after a speaker
 ## Milestone M1 active: complete Western PC skill labels
 
 Roadmap issue [#11](https://github.com/topcatromhacking-lgtm/dragon-quest-heroes-switch-english-undub/issues/11), pilot [#10](https://github.com/topcatromhacking-lgtm/dragon-quest-heroes-switch-english-undub/issues/10). Six complete Western PC strings have been verified in the PC VAP. Original Japanese Switch 1.0.0 MOD0 symbol analysis located the older DQH1 skill menu registration path. Fourteen font-call checks passed, confirming multiple small native per-call glyph budgets, but exact screenshot-title mapping and safe backing-array extent remain unproven. **No skill-tree executable fix yet.** See [verified static report](M1_SKILL_LABELS_REPORT.md).
+
+
+### 2026-10-13 M1 follow-up: installed data confirmed, sprite-pool models proven
+
+User supplied `skill_report.json`. All six full PC labels survive into the translated DQH1 4,501-record system VAP, and their record references are documented. Fifteen original Switch instruction signatures verified an **embedded 12-sprite** character-selection draw and a **global reserved seven-sprite** skill-point draw. Draw-operation ↔ screenshot-label mapping is still pending, so **no capacity patch is safe yet**. See [M1 source/pool report](M1_SOURCE_AND_POOL_FOLLOWUP.md).
