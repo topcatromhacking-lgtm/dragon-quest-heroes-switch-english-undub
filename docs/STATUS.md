@@ -59,3 +59,8 @@ Roadmap issue [#11](https://github.com/topcatromhacking-lgtm/dragon-quest-heroes
 ### 2026-10-13 M1 follow-up: installed data confirmed, sprite-pool models proven
 
 User supplied `skill_report.json`. All six full PC labels survive into the translated DQH1 4,501-record system VAP, and their record references are documented. Fifteen original Switch instruction signatures verified an **embedded 12-sprite** character-selection draw and a **global reserved seven-sprite** skill-point draw. Draw-operation ↔ screenshot-label mapping is still pending, so **no capacity patch is safe yet**. See [M1 source/pool report](M1_SOURCE_AND_POOL_FOLLOWUP.md).
+
+
+### New isolated M1 experimental test: v9.3.12-EXP (Eden pending)
+
+Exact label-to-font paths have now been identified for six skill headings. To avoid increasing object memory, an isolated three-instruction NSO patch **rebalances Requirements and Details within the same twenty-sprite region** (Requirements 12, Details 8, totals unchanged). Offline original- and pagehook-combined builds pass with no other executable section changes. This is **not gameplay validated** or a universal capacity fix. See [readme and rollback plan](M1_REQUIREMENTS_POOL_EXPERIMENT.md) and milestone [#11](https://github.com/topcatromhacking-lgtm/dragon-quest-heroes-switch-english-undub/issues/11).
