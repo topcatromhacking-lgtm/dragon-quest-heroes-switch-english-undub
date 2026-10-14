@@ -6,7 +6,7 @@
 
 Prioritize identifying and safely expanding per-widget **native Switch glyph/text capacity** where English has already been transplanted but clips despite available visual room. Preserve complete official Western PC terminology instead of repeatedly abbreviating. Pilot screenshot: `Attribut`, `Requiremen`, `Points Req`, `Skill Po`, `Switch Charac`, `Spells a`. Confirm the official source and storage of each; derive exact limits in the Japanese Switch 1.0.0 executable; prototype **one** isolated safe field fix, then test all related fields in Eden. Keep Japanese audio, saves, and the separate starting-menu archive unchanged; preserve v9.3.9 rollback.
 
-After this pilot, address other verified text-capacity classes (including Action List single-window parity) without conflating their allocations. **No full-label executable patch is yet validated.**
+After this pilot, address other verified text-capacity classes (including Action List single-window parity) without conflating their allocations. **No full-label executable patch is yet validated. **Progress:** the original Switch v1.0.0 code and PC `0001.vap` passed a 14-site font-call audit; a separate [read-only local LINKDATA inspector](../tools/inspect_transplanted_skill_text.py) is available to map actual transplanted strings before attempting an isolated patch.**
 
 ---
 
