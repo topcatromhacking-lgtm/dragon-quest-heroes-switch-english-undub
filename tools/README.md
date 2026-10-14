@@ -48,3 +48,15 @@ python -m unittest discover -s tools -p 'test_plan_action_pages.py' -v
 ```
 
 Full-corpus offline result: **77 one-page, 107 two-page, 0 three-page; complete wording preserved in all 184 cases**, with 58 estimated units per page and 39 per line. Seven synthetic tests pass. These are **not measurements of actual Switch font sprite use**, and no executable hook or in-game page control has yet been developed. Optional `--local-preview` writes copyrighted game text; **do not commit/upload the generated preview**. See [pagination engineering design](../docs/ACTION_LIST_PAGINATION_DESIGN.md).
+
+
+## Milestone M1: original Switch skill UI capacity audit
+
+Use the [source-only, read-only skill audit](audit_skill_ui_capacity.py) with your original Japanese Switch DQH1 v1.0.0 NSO and the Western PC extracted `0000000000000001.vap`:
+
+```sh
+python -m pip install lz4
+python tools/audit_skill_ui_capacity.py /path/to/original-exefs/main /path/to/PC/0000000000000001.vap --output skill_audit.json
+```
+
+All **14 fixed-budget instruction/BL pairs** were checked against the original NSO. Six complete English PC strings were located. This is **not a patch tool**; do not modify cap immediates until the corresponding backing sprite pools are proven safe. See [M1 findings](../docs/M1_SKILL_LABELS_REPORT.md).
