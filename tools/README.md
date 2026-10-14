@@ -60,3 +60,14 @@ python tools/audit_skill_ui_capacity.py /path/to/original-exefs/main /path/to/PC
 ```
 
 All **14 fixed-budget instruction/BL pairs** were checked against the original NSO. Six complete English PC strings were located. This is **not a patch tool**; do not modify cap immediates until the corresponding backing sprite pools are proven safe. See [M1 findings](../docs/M1_SKILL_LABELS_REPORT.md).
+
+
+## M1 skill label: inspect a running English-transplanted DQH1 RomFS
+
+After performing the Switch original-code audit, use [inspect_transplanted_skill_text.py](inspect_transplanted_skill_text.py) to check where the **full** strings actually live in the installed English DQH1 LINKDATA. This reads only; no source file is modified. A synthetic 4501-record VAP/IDX mapping test passed.
+
+```powershell
+python -X utf8 tools/inspect_transplanted_skill_text.py "C:\\path\\to\\english-romfs\\dqh1" --scan-all --output skill_report.json
+```
+
+Send only the small `skill_report.json` output, not the multi-GB LINKDATA archive. The optional full scan checks **uncompressed** entries only; absence in these entries does not prove the string is absent from compressed/indirect resources. The default scan checks just system slot 3.
