@@ -86,3 +86,8 @@ User supplied three screenshots (Luceus and Aurora): full `Points Required`, `Re
 ### v9.3.14-EXP: extra persistent description sprite pool (offline tested, Eden pending)
 
 This independent experiment starts from **v9.3.12** (not regressing v9.3.13). A four-site AArch64 patch plus 52-byte initialization hook reallocates `Points Required=15, Requirements=12, Details=8`, while keeping the dynamic description at its original **36 glyph sprites** by using an appended 4 KiB BSS page. Six offline test groups passed for both supported v9.3.12 executables, preserving the prior X-held Action List hook when present. **No runtime validation yet.** There are substantial loader/renderer risks with external sprite storage. [Details and Eden test gate](M1_V9314_BSS_DESCRIPTION_EXPERIMENT.md). User-tested v9.3.12 is still last successful M1 checkpoint.
+
+
+### v9.3.14-EXP: first positive Eden result, 2026-10-14
+
+The user's new **Inferno Slash** screenshot confirms restoration of the original description visibility (`Summons a fiery tornado that sweeps`, as in v9.3.12), reversing v9.3.13's `...that sw` truncation. `Requirements` and `Details` remain complete; title boots. The BSS-backed persistent description pool thus has **positive runtime evidence** for this skill. **Still pending:** simultaneous `Points Required` display (not shown in screenshot), multiple character and locked-skill states, X-held Action List behavior and extended regression checks. Preserve experimental designation and prior v9.3.12 rollback. See [BSS experiment](M1_V9314_BSS_DESCRIPTION_EXPERIMENT.md).
