@@ -69,3 +69,10 @@ Exact label-to-font paths have now been identified for six skill headings. To av
 ### Eden-confirmed first M1 native renderer fix, v9.3.12-EXP (2026-10-13)
 
 Tester supplied an in-game Luceus skill-tree screenshot and reported **all three checks passed**: `Requirements` fully displayed after reallocating 12 existing sprite slots; adjacent seven-letter `Details` fully rendered with its eight slots; holding X continues to show page 2 in the Action List. This proves a narrowly scoped **20-sprite capacity redistribution works in Eden**, but does not prove all skill labels fixed or all gameplay/regression cases. Other captions (`Attribut`, `Spells a`, `Switch Charac`, `Skill Po`) remain visibly truncated. Next evaluate other adjacent sprite pools independently. Keep v9.3.12 experimental, v9.3.9 rollback.
+
+
+### v9.3.13-EXP: Points Required pilot packaged (Eden pending)
+
+After v9.3.12's successful Requirements/Details runtime test, a separate five-instruction version-locked prototype reallocates the same 66 embedded sprites to `Points Required=15 / Requirements=12 / Details=8 / dynamic field=31` (formerly 10/12/8/36). Six offline tests pass for both supported v9.3.12 main variants, with unchanged unrelated code, rodata, data and preserved Action List X-hook where used. **The dynamic field loses five reserved sprites, so real long-value tests remain necessary. No user runtime confirmation yet; do not call stable.** Research: [v9.3.13 pilot](M1_POINTS_REQUIRED_V9313_EXPERIMENT.md).
+
+Attributes, Spells and Abilities, Special Effects and Exclusive share just four 8-sprite pools; their source titles exceed that combined capacity. **No safe rebalancing-only solution**, require separate owned storage / relocation study.
