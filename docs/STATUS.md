@@ -49,3 +49,8 @@ A patch must not truncate previously working dialogue, lose text after a speaker
 ## Current executable experiment (not baseline)
 
 **v9.3.11-EXP** is a separately packaged **Action List-only pagination proof** with a 132-byte AArch64 page-selector, tagged dual-page VAP records and unchanged 60-sprite allocation. Five offline integrity tests passed using locally supplied PC/Switch assets, and all 184 PC text entries remain recoverable (77 one-page, 107 two-page). **First Eden gameplay evidence now positive:** physical **X** reveals page 2 for Attack (No MP Used) and both screenshots combine to the full English text. Hold/release behavior, other entries and input conflicts remain unverified. **No approved stable release.** The target main must be the exact Japanese Switch 1.0.0 NSO. Known working rollback is v9.3.9; v9.3.10 menu changes remain partially verified. See [experimental integration guide](ACTION_LIST_PAGEHOOK_EXPERIMENT.md).
+
+
+## Milestone M1 active: complete Western PC skill labels
+
+Roadmap issue [#11](https://github.com/topcatromhacking-lgtm/dragon-quest-heroes-switch-english-undub/issues/11), pilot [#10](https://github.com/topcatromhacking-lgtm/dragon-quest-heroes-switch-english-undub/issues/10). Six complete Western PC strings have been verified in the PC VAP. Original Japanese Switch 1.0.0 MOD0 symbol analysis located the older DQH1 skill menu registration path. Fourteen font-call checks passed, confirming multiple small native per-call glyph budgets, but exact screenshot-title mapping and safe backing-array extent remain unproven. **No skill-tree executable fix yet.** See [verified static report](M1_SKILL_LABELS_REPORT.md).
