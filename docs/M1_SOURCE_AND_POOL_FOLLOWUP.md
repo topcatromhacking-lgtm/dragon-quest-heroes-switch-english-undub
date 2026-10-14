@@ -4,7 +4,7 @@
 
 ## Actual installed Switch English resources
 
-User-supplied `skill_report.json` identifies **gameplay DQH1** slot #3 SHA-256 `17ffe261da8bbcc8301acf71cb057a619e318460b79071530b26f6f244cb271f` (226,080 bytes, 4,501 records). It finds full English source text **before rendering**. The original Western PC `0000000000000001.vap` was also inspected at those record IDs. All confirmed source records:
+User-supplied `skill_report.json` identifies **gameplay DQH1** slot #3 SHA-256 `17ffe261da8bbcc8301acf71cb057a619e318460b79071530b26f6f244cb271f` (226,080 bytes, 4,501 records). It finds full English source text **within the installed archive**. **This does not yet prove which of several text records the screenshot widgets actually request.** The original Western PC `0000000000000001.vap` was also inspected at those record IDs. All confirmed source records:
 
 | Source text | Message records and caveats |
 | --- | --- |
