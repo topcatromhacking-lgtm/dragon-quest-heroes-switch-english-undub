@@ -51,3 +51,7 @@ The command creates **`M1_REQ_TEST/exefs/main`** and a validation JSON file. It 
 - Five source-only tests passed with local user-supplied input NSOs. Every failure to match the expected code fails closed.
 
 The separate read-only audit `audit_six_skill_labels.py` confirms direct call paths for **Requirements, Points Required, Attributes, Spells and Abilities, Skill Points, Switch Character**, and identifies distinct sprite pools. Its report is informational, not a universal patch.
+
+## Eden validation received: 2026-10-13
+
+**Successful focused pilot.** User's screenshot shows full **Requirements** and full **Details**. User explicitly confirms X-held Action List pagination still works on the combined executable. The sprite capacity was rebalanced within the same 20-slot object region without visible collision in the tested screenshot. This validates the targeted patch in Eden only; expanded character switching, saves/loads, and comprehensive regression testing are not yet documented. **Keep marked EXP; do not declare production-stable.**
