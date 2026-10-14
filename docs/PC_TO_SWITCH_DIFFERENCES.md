@@ -129,3 +129,10 @@ User diagnostic of installed translated gameplay slot 3 (SHA `17ffe261da8bbcc830
 ### M1 first native rendering correction accepted in Eden testing (v9.3.12-EXP)
 
 Eden screenshot and user confirmation: **`Requirements`** now displays completely instead of **`Requiremen`**, while the adjacent **`Details`** remains complete. Both reuse their original twenty-sprite combined pool: `Requirements` 10→12, `Details` 10→8. User also confirmed the prior v9.3.11 X-held Action List page2 still works. These results establish one **runtime-proven sprite-budget repacking technique**, but the executable is still an experimental test and must pass wider regression checks before promotion. Other labels (`Attribut`, `Spells a`, `Switch Charac`, `Skill Po`, plus code-bearing `F4I040-E`) remain unresolved.
+
+
+### v9.3.13-EXP: another faithful-label preservation test, not yet confirmed
+
+A five-instruction executable experiment gives official PC `Points Required` all **15 glyph slots** while preserving `Requirements` (12) and `Details` (8) inside the original **66-slot** neighboring sprite region. The next dynamic field shrinks 36→31 and moves; its maximum content length is unknown, so **this is an unverified risky trade until Eden tests several skills/characters and nonempty dynamic statuses**. Source wording stays intact, no localized VAP resource is modified, and the X-held Action List prototype is preserved in the combined variant. Technical map and validation: [M1 v9.3.13 experimental design](M1_POINTS_REQUIRED_V9313_EXPERIMENT.md).
+
+By contrast, the nearby `Spells and Abilities` / ESC Exclusive / `Attributes` / `Special Effects` category headings each have 8 embedded sprites, totaling 32. Just three of their English names require at least 45 slots, making an equivalent no-growth redistribution **impossible** for that entire group. Their eventual full English restoration requires larger persistent storage or a different proven display mechanism.
