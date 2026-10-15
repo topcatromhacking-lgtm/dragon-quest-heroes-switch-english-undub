@@ -56,3 +56,8 @@ Verify **Attributes** completely displays (10 letters), including after characte
 This is a single-heading proof, **not** a blanket UI expansion. The external BSS pool is global and may be shared by concurrently open panels; per-widget sprite ownership/registration and reentry require real Eden confirmation. Other headings (`Spells and Abilities`, `Switch Character`, `Skill Points`), long skill names/descriptions, and Western PC escape tokens (`ESC F/I/G`) are unchanged and remain open under skill UI issue #10 and ESC decoder issue #12.
 
 **Release gate:** no stable promotion until the user validates runtime behavior and prior translations remain intact.
+
+
+## EDEN OUTCOME 2026-10-15 — FAILED, DO NOT INSTALL
+
+User reports **Attributes disappears entirely** with this experiment. This supersedes the earlier “Eden pending” status. Restore protected selector-restored v9.3.14+X main(7) SHA `47116b6c07abd8dba61c659aac7226a4bb6e221d0ae38fd2963e1ff273f3c745` and leave both LINKDATA archives intact. The 10-sprite external buffer was passed into only one `CFont::SetStrPrim` call; unmodified native paths still use `this+0xCF8` for original array registration/drawing. It was incorrect to infer complete renderer integration from successful code/NSO integrity tests. **No replacement build is approved.** See [full failure analysis](M1_V9315_ATTRIBUTES_FAILURE.md).
