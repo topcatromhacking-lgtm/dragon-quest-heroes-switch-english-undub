@@ -1,3 +1,5 @@
+**Important correction, 2026-10-15:** The earlier attribution of x19+0xCF8 references at 0x209774 / 0x209838 / 0x2C61F0 to the Attributes owner is NOT justified. That code uses a 13-sprite, 0x450-stride layout, versus the real category heading's 8-sprite, 0x240-stride layout. v9.3.15 also copied two objects from the next category's original sprite array. The real cause of the disappearance is still not proven; do not redirect any unrelated registration paths based on an identical offset. Superseding analysis: [M1 v9.3.16 sprite-owner audit](M1_V9316_SPRITE_OWNER_AUDIT.md).
+
 # v9.3.15 Attributes disappeared: root-cause investigation (October 15, 2026)
 
 **Eden report:** Attributes completely disappeared when using v9.3.15-EXP. **Status: FAILED. REJECT THIS BUILD.** Restore the user-confirmed selector-restored v9.3.14+X `main(7)`, SHA-256 `47116b6c07abd8dba61c659aac7226a4bb6e221d0ae38fd2963e1ff273f3c745`. Do not change either gameplay or startup LINKDATA pair for this rollback.
