@@ -163,3 +163,8 @@ The latest user-uploaded merged `exefs/main` restores the **v9.3.1 original Engl
 ### v9.3.15-EXP: keeping the official `Attributes` label intact (test pending)
 
 Official PC message `Attributes` is still complete in translated Switch system-message record **2954**, but the Japanese Switch renderer allocates only 8 font sprites and displays `Attribut`. An isolated native executable experiment now requests **10** using unused **720 bytes of the already allocated BSS page** (not borrowing from another heading), leaving complete official wording and all original text data unchanged. Exactly two original code instructions plus a 56-byte initialized-sprite copy helper are patched against the **selector-restored** canonical main. This is **only an offline-tested v9.3.15-EXP** until Eden confirms correct Attributes display and no regression to neighboring headings, selector, skill descriptions or Action List pagehook. [Experiment report](M1_V9315_ATTRIBUTES_BSS_EXPERIMENT.md).
+
+
+### v9.3.15-EXP failed: Attributes vanished rather than expanding
+
+Eden report 2026-10-15: external BSS-only Attributes buffer at VA `0x33B3A20` made the **entire `Attributes` title disappear**. Restore selector-restored v9.3.14+X main; do not use v9.3.15. Byte-level analysis finds v9.3.15 redirected a **single font-generation pointer** from the original `this+0xCF8` array, but other native render/registration paths still refer to that original array. Renderer pointer consistency and lifetime were never established by the seven earlier static tests. Full official PC English remains in the text resources, so **do not abbreviate it or transplant new source strings** to hide this issue. [Rejected experiment and evidence](M1_V9315_ATTRIBUTES_FAILURE.md).
